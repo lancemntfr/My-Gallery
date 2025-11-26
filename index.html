@@ -12,6 +12,22 @@
         body {
             font-family: "Inter", sans-serif;
         }
+
+        .photo-card {
+            width: clamp(100px, 10vw, 250px);
+            height: clamp(100px, 10vw, 250px);
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .photo-img {
+            width: clamp(100px, 10vw, 250px);
+            height: clamp(100px, 10vw, 250px);
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
     </style>
 </head>
 
@@ -20,7 +36,7 @@
         <div class="row fixed-bottom border border-dark-subtle">
             <div class="col p-lg-5 p-md-4 p-3 bg-light shadow-lg">
                 <div class="">
-                    ndwnqacwjqaj
+                    Nav Bar
                 </div>
             </div>
         </div>
@@ -31,14 +47,36 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <div class="card" style="width: 15rem; height: 15rem; ">
-                    <img src="" class="card-img-top">
-                </div>
-            </div>
+        <div id="photo-container" class="row p-5 g-md-5 g-4 d-flex justify-content-center">
         </div>
     </div>
+
+    <script src="photos.js"></script>
+    <script>
+        var photoContainer = document.getElementById("photo-container");
+
+        for (var i = 0; i < photos.length; i++) {
+            photoContainer.innerHTML += `
+                                            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                                                <div class="card photo-card" data-bs-toggle="modal" data-bs-target=#`+ photos[i].id + `>
+                                                    <img src="`+ photos[i].image + `" class="photo-img">
+                                                </div>
+                                            </div>
+
+                                            <div class="modal" id=`+ photos[i].id + ` tabindex="-1">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <img src="`+ photos[i].image + `" class="img-fluid mb-3">
+                                                            <h4>`+ photos[i].title + `</h4>
+                                                            <p>`+ photos[i].description + `</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            `;
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
