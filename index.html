@@ -11,10 +11,11 @@
     <style>
         body {
             font-family: "Inter", sans-serif;
+            overflow-x: hidden;
         }
 
         .photo-card {
-            width: clamp(100px, 10vw, 250px);
+            width: clamp(100px, 16vw, 300px);
             height: clamp(100px, 10vw, 250px);
             overflow: hidden;
             cursor: pointer;
@@ -22,8 +23,8 @@
         }
 
         .photo-img {
-            width: clamp(100px, 10vw, 250px);
-            height: clamp(100px, 10vw, 250px);
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             object-position: center;
             display: block;
@@ -33,21 +34,24 @@
 
 <body>
     <div class="container-fluid p-0 m-0">
-        <div class="row fixed-bottom border border-dark-subtle">
-            <div class="col p-lg-5 p-md-4 p-3 bg-light shadow-lg">
-                <div class="">
-                    Nav Bar
-                </div>
+        <div class="row fixed-bottom border border-dark-subtle p-md-3 p-2 bg-light shadow-lg">
+            <div class="col-6">
+                <a ><img src="assets/images/phot.png" class="mx-5" style=""></a>
+                <a><img src="assets/images/galler.png" class="mx-5" style=""></a>
+                <a><img src=""></a>
+            </div>
+            <div class="col-6">
+                
             </div>
         </div>
         <div class="row">
-            <div class="col p-4">
-                <div class="h1">
+            <div class="col-12">
+                <div class="h1 px-3 py-md-4 py-2">
                     Lance's Photo Dump
                 </div>
             </div>
         </div>
-        <div id="photo-container" class="row p-5 g-md-5 g-4 d-flex justify-content-center">
+        <div id="photo-container" class="row p-3 me-1 d-flex justify-content-start">
         </div>
     </div>
 
@@ -57,7 +61,7 @@
 
         for (var i = 0; i < photos.length; i++) {
             photoContainer.innerHTML += `
-                                            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 py-1">
                                                 <div class="card photo-card" data-bs-toggle="modal" data-bs-target=#`+ photos[i].id + `>
                                                     <img src="`+ photos[i].image + `" class="photo-img">
                                                 </div>
