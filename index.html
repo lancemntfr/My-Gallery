@@ -12,11 +12,13 @@
         body {
             font-family: "Inter", sans-serif;
             overflow-x: hidden;
+            scroll-behavior: smooth;
+            padding-bottom: 100px;
         }
 
         .photo-card {
             width: clamp(100px, 16vw, 300px);
-            height: clamp(100px, 10vw, 250px);
+            height: clamp(100px, 16vw, 250px);
             overflow: hidden;
             cursor: pointer;
             border-radius: 10px;
@@ -36,9 +38,9 @@
     <div class="container-fluid p-0 m-0">
         <div class="row fixed-bottom border border-dark-subtle p-md-3 p-2 bg-light shadow-lg">
             <div class="col-6">
-                <a ><img src="assets/images/phot.png" class="mx-5" style=""></a>
-                <a><img src="assets/images/galler.png" class="mx-5" style=""></a>
-                <a><img src=""></a>
+                <a ><img src="" class="mx-5"></a>
+                <a><img src="" class="mx-5"></a>
+                <a><img src="" class="mx-5"></a>
             </div>
             <div class="col-6">
                 
@@ -46,28 +48,43 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <div class="h1 px-3 py-md-4 py-2">
+                <div class="h1 px-3 pt-md-4 pt-3">
                     Lance's Photo Dump
                 </div>
             </div>
         </div>
-        <div id="photo-container" class="row p-3 me-1 d-flex justify-content-start">
+        <div id="photo-container" class="row p-3 mx-auto g-lg-1 g-2" style ="min-height: 150vh;">
         </div>
     </div>
 
     <script src="photos.js"></script>
     <script>
         var photoContainer = document.getElementById("photo-container");
+        var lastDate = "";
 
         for (var i = 0; i < photos.length; i++) {
-            photoContainer.innerHTML += `
-                                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 py-1">
-                                                <div class="card photo-card" data-bs-toggle="modal" data-bs-target=#`+ photos[i].id + `>
+            var photoCards = ``;
+
+            if (photos[i].date !== lastDate){
+                photoCards += `
+                                <div class="col-12">
+                                    <div class="h3 mt-4">
+                                        <b>`+ photos[i].date +`</b>
+                                    </div>
+                                </div>
+                `;
+
+                lastDate = photos[i].date;
+            }
+            
+            photoCards += `
+                                            <div class="col-md-2 col-sm-3 col-6">
+                                                <div class="card photo-card" data-bs-toggle="modal" data-bs-target=#`+ i + `>
                                                     <img src="`+ photos[i].image + `" class="photo-img">
                                                 </div>
                                             </div>
 
-                                            <div class="modal" id=`+ photos[i].id + ` tabindex="-1">
+                                            <div class="modal" id=`+ i + ` tabindex="-1">
                                                 <div class="modal-dialog modal-lg modal-dialog-centered">
                                                     <div class="modal-content">
                                                         <div class="modal-body">
@@ -79,6 +96,8 @@
                                                 </div>
                                             </div>
             `;
+
+            photoContainer.innerHTML += photoCards;
         }
     </script>
 
