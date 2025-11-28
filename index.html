@@ -17,8 +17,7 @@
         }
 
         .photo-card {
-            width: clamp(100px, 16vw, 300px);
-            height: clamp(100px, 16vw, 250px);
+            height: clamp(100px, 16vw, 200px);
             overflow: hidden;
             cursor: pointer;
             border-radius: 10px;
@@ -38,12 +37,12 @@
     <div class="container-fluid p-0 m-0">
         <div class="row fixed-bottom border border-dark-subtle p-md-3 p-2 bg-light shadow-lg">
             <div class="col-6">
-                <a ><img src="" class="mx-5"></a>
+                <a><img src="" class="mx-5"></a>
                 <a><img src="" class="mx-5"></a>
                 <a><img src="" class="mx-5"></a>
             </div>
             <div class="col-6">
-                
+
             </div>
         </div>
         <div class="row">
@@ -53,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <div id="photo-container" class="row p-3 mx-auto g-lg-1 g-2" style ="min-height: 150vh;">
+        <div id="photo-container" class="row p-3 g-1 mx-auto g-0" style="min-height: 150vh;">
         </div>
     </div>
 
@@ -65,20 +64,20 @@
         for (var i = 0; i < photos.length; i++) {
             var photoCards = ``;
 
-            if (photos[i].date !== lastDate){
+            if (photos[i].date !== lastDate) {
                 photoCards += `
                                 <div class="col-12">
                                     <div class="h3 mt-4">
-                                        <b>`+ photos[i].date +`</b>
+                                        <b>`+ photos[i].date + `</b>
                                     </div>
                                 </div>
                 `;
 
                 lastDate = photos[i].date;
             }
-            
+
             photoCards += `
-                                            <div class="col-md-2 col-sm-3 col-6">
+                                            <div class="col-md-2 col-sm-3 col-6 photo-card">
                                                 <div class="card photo-card" data-bs-toggle="modal" data-bs-target=#`+ i + `>
                                                     <img src="`+ photos[i].image + `" class="photo-img">
                                                 </div>
