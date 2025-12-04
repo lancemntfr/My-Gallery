@@ -3,77 +3,77 @@ var photos = [
        "image": "assets/images/6125259728385412309.jpg",
        "date": "Nov 21",
        "album": "",
-       "title": "",
+       "title": "Hackathon",
        "description": ""
     },
     {
        "image": "assets/images/6125259728385412315.jpg",
        "date": "Nov 21",
        "album": "",
-       "title": "",
+       "title": "Hackathon",
        "description": ""
     },
     {
        "image": "assets/images/6125259728385412316.jpg",
        "date": "Nov 21",
        "album": "",
-       "title": "",
+       "title": "Hackathon",
        "description": ""
     },
     {
        "image": "assets/images/6127511528199097257.jpg",
        "date": "Nov 21",
        "album": "",
-       "title": "",
+       "title": "Hackathon",
        "description": ""
     },
     {
        "image": "assets/images/6127511528199097258.jpg",
        "date": "Nov 21",
        "album": "",
-       "title": "",
+       "title": "Hackathon",
        "description": ""
     },
     {
        "image": "assets/images/6127511528199097260.jpg",
        "date": "Nov 21",
        "album": "",
-       "title": "",
+       "title": "Hackathon",
        "description": ""
     },
     {
        "image": "assets/images/6129708519935118302.jpg",
        "date": "Nov 21",
        "album": "",
-       "title": "",
+       "title": "Hackathon",
        "description": ""
     },
     {
        "image": "assets/images/6129708519935118353.jpg",
        "date": "Nov 21",
        "album": "",
-       "title": "",
+       "title": "Hackathon",
        "description": ""
     },
     {
        "image": "assets/images/6125259728385412299.jpg",
        "date": "Nov 21",
        "album": "",
-       "title": "IDK",
+       "title": "Hackathon",
        "description": ""
     },
     {
        "image": "assets/images/6129708519935118357.jpg",
        "date": "Nov 21",
        "album": "",
-       "title": "Hiiii",
+       "title": "Hackathon",
        "description": ""
     },
     {
        "image": "assets/images/6129708519935118363.jpg",
        "date": "Nov 21",
        "album": "",
-       "title": "Woahhh",
+       "title": "Hackathon",
        "description": ""
     },
     {
